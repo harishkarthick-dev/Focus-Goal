@@ -11,7 +11,7 @@
 
 A beautiful, offline-first task manager that actually works the way your brain does. Built with modern web tech and a whole lot of caffeine ☕
 
-[Try it Live](https://tasky.app) • [Report a Bug](https://github.com/harishkarthick-dev/tasky/issues) • [Got Ideas?](https://github.com/harishkarthick-dev/tasky/issues)
+[Try it Live](https://focusgoal.vercel.app) • [Report a Bug](https://github.com/harishkarthick-dev/tasky/issues) • [Got Ideas?](https://github.com/harishkarthick-dev/tasky/issues)
 
 </div>
 

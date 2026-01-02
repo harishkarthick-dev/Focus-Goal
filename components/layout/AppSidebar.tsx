@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import {
@@ -59,12 +60,29 @@ export function AppSidebar() {
         )}
       >
         {isSidebarOpen ? (
-          <h1 className="text-2xl font-bold bg-gradient-to-tr from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-            Tasky
-          </h1>
+          <div className="flex items-center gap-2">
+            <div className="relative w-8 h-8 rounded-lg overflow-hidden shrink-0">
+              <Image src="/logo.png" alt="Tasky" fill className="object-cover dark:hidden" />
+              <Image
+                src="/logo-dark.png"
+                alt="Tasky"
+                fill
+                className="object-cover hidden dark:block"
+              />
+            </div>
+            <h1 className="text-xl font-bold bg-gradient-to-tr from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              Tasky
+            </h1>
+          </div>
         ) : (
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold">
-            T
+          <div className="relative w-8 h-8 rounded-lg overflow-hidden shrink-0">
+            <Image src="/logo.png" alt="Tasky" fill className="object-cover dark:hidden" />
+            <Image
+              src="/logo-dark.png"
+              alt="Tasky"
+              fill
+              className="object-cover hidden dark:block"
+            />
           </div>
         )}
         <button

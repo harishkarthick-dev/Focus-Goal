@@ -22,7 +22,7 @@ export default function GoalsPage() {
 
   return (
     <div className="max-w-5xl mx-auto p-4 md:p-8">
-      <div className="flex items-center justify-between mb-8 pr-4 lg:pr-48">
+      <div className="flex items-center justify-between mb-8 pr-20 lg:pr-48">
         <PageHeader
           title="Goals"
           subtitle="Stay focused on the big picture."

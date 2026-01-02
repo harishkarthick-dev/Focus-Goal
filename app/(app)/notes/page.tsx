@@ -39,7 +39,7 @@ export default function NotesPage() {
 
   return (
     <div className="max-w-6xl mx-auto p-4 md:p-8">
-      <div className="pr-16 md:pr-36">
+      <div className="pr-20 md:pr-0">
         <PageHeader
           title="Notes"
           subtitle="Ideas, lists, and daily thoughts."

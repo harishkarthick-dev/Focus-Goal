@@ -21,10 +21,10 @@ export default function ContactPage() {
         <div className="text-left">
           <div className="text-sm text-zinc-500 dark:text-zinc-400">Email us at</div>
           <a
-            href="mailto:hello@tasky.app"
+            href="mailto:hello@focusgoal.vercel.app"
             className="text-xl font-bold text-zinc-900 dark:text-zinc-50 hover:text-amber-500 transition-colors"
           >
-            hello@tasky.app
+            hello@focusgoal.vercel.app
           </a>
         </div>
       </div>

@@ -13,7 +13,7 @@ export default function DashboardPage() {
   const { currentUser } = useUserStore();
   return (
     <div className="max-w-7xl mx-auto p-6 md:p-12 space-y-16">
-      <section className="max-w-4xl">
+      <section className="max-w-4xl pr-20 md:pr-0">
         <Greeting name={currentUser?.displayName || 'Friend'} />
       </section>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12">

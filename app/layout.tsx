@@ -34,12 +34,14 @@ export const metadata: Metadata = {
   creator: 'Tasky',
   manifest: '/manifest.json',
   icons: {
-    icon: '/favicon.ico',
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://tasky.app',
+    url: 'https://focusgoal.vercel.app',
     title: 'Tasky - Radiant Productivity',
     description: 'Organize your life with elegance. A beautiful, local-first productivity app.',
     siteName: 'Tasky',

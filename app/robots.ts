@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://tasky.app/sitemap.xml',
+    sitemap: 'https://focusgoal.vercel.app/sitemap.xml',
   };
 }
