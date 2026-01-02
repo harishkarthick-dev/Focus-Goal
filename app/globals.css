@@ -1,0 +1,99 @@
+@import 'tailwindcss';
+@plugin "@tailwindcss/typography";
+
+@source "../app";
+@source "../components";
+@source "../lib";
+
+@theme {
+  --font-sans: var(--font-outfit);
+  --font-serif: var(--font-playfair);
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+  }
+
+  body {
+    /* Use direct colors or theme() if supported, but v4 simplifies this */
+    @apply bg-zinc-50 text-zinc-900 transition-colors duration-300;
+  }
+
+  .dark body {
+    @apply bg-zinc-950 text-zinc-50;
+  }
+
+  /* Premium Selection */
+  ::selection {
+    @apply bg-amber-200 text-amber-950;
+  }
+}
+
+/* View Transition API - Joyful Circular Reveal */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* 
+   Logic: "New View" is always on top to allow the "ripple" to expand over the old view.
+   This applies to both Light -> Dark and Dark -> Light.
+*/
+
+::view-transition-new(root) {
+  z-index: 2147483647;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-zinc-200 dark:bg-zinc-800 rounded-full hover:bg-zinc-300 dark:hover:bg-zinc-700;
+}
+
+/* Tiptap Placeholder */
+.ProseMirror p.is-editor-empty:first-child::before {
+  color: #a1a1aa;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+/* Shimmer Animation */
+@keyframes shimmer {
+  100% {
+    transform: translateX(200%) skewX(-12deg);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 8s infinite ease-in-out;
+}
