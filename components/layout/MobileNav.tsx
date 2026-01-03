@@ -14,6 +14,7 @@ import {
   StickyNote,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { UserNav } from './UserNav';
 
 const navItems = [
   { label: 'Home', icon: Home, href: '/dashboard', color: 'text-indigo-500' },
@@ -50,12 +51,21 @@ export function MobileNav() {
 
   return (
     <div className="md:hidden">
-      <button
-        onClick={() => setIsOpen(true)}
-        className="fixed top-6 left-6 z-40 p-2.5 rounded-full bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl border border-zinc-200 dark:border-zinc-800 shadow-sm text-zinc-600 dark:text-zinc-300 active:scale-95 transition-all"
-      >
-        <Menu className="w-5 h-5" />
-      </button>
+      {/* Mobile Header */}
+      <div className="fixed top-0 left-0 right-0 z-40 px-4 py-3 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-xl border-b border-zinc-200 dark:border-zinc-800 flex items-center justify-between">
+        <button
+          onClick={() => setIsOpen(true)}
+          className="p-2 rounded-full bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-sm text-zinc-600 dark:text-zinc-300 active:scale-95 transition-all"
+        >
+          <Menu className="w-5 h-5" />
+        </button>
+
+        <span className="text-lg font-bold bg-gradient-to-tr from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+          Tasky
+        </span>
+
+        <UserNav className="" />
+      </div>
 
       <AnimatePresence>
         {isOpen && (
@@ -101,6 +111,7 @@ export function MobileNav() {
                     >
                       <Link
                         href={link.href}
+                        onClick={() => setIsOpen(false)}
                         className={cn(
                           'flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-bold transition-colors',
                           isActive

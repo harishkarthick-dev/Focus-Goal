@@ -10,7 +10,7 @@ import { PremiumModal } from '@/components/modals/PremiumModal';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Settings, LogOut, Sparkles } from 'lucide-react';
 
-export function UserNav() {
+export function UserNav({ className }: { className?: string }) {
   const { currentUser, logout } = useUserStore();
   const [isOpen, setIsOpen] = useState(false);
   const [showPremium, setShowPremium] = useState(false);
@@ -46,7 +46,7 @@ export function UserNav() {
 
   return (
     <>
-      <div className="fixed top-6 right-6 z-50 flex flex-col items-end" ref={menuRef}>
+      <div className={cn('flex flex-col items-end', className)} ref={menuRef}>
         <motion.div
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}

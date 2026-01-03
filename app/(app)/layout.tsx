@@ -3,6 +3,7 @@
 import { AppSidebar } from '@/components/layout/AppSidebar';
 import { MobileNav } from '@/components/layout/MobileNav';
 import { UserNav } from '@/components/layout/UserNav';
+import { BottomNav } from '@/components/layout/BottomNav';
 import { CommandCenter } from '@/components/command/CommandCenter';
 import { FocusTimer } from '@/components/focus/FocusTimer';
 import { TaskDetailsPanel } from '@/components/task/TaskDetailsPanel';
@@ -54,7 +55,9 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     <div className="flex h-screen w-full bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50 font-sans transition-colors duration-300">
       <AppSidebar />
       <MobileNav />
-      <UserNav />
+      {/* Desktop UserNav - only visible on md+ */}
+      <UserNav className="fixed top-6 right-6 z-50 hidden md:flex" />
+      <BottomNav />
       <CommandCenter />
       <FocusTimer />
       <TaskDetailsPanel />
