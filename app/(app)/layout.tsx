@@ -63,7 +63,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
       <TaskDetailsPanel />
       <InstallPrompt />
       <main className="flex-1 flex flex-col min-w-0 overflow-hidden">
-        <div className="flex-1 overflow-y-auto">{children}</div>
+        <div className="flex-1 overflow-y-auto pt-16 pb-24 md:pt-0 md:pb-0">{children}</div>
       </main>
     </div>
   );
