@@ -8,6 +8,7 @@ import { useUserStore } from '@/store/user.store';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { PremiumModal } from '@/components/modals/PremiumModal';
 import { motion, AnimatePresence } from 'framer-motion';
+import { cn } from '@/lib/utils';
 import { Settings, LogOut, Sparkles } from 'lucide-react';
 
 export function UserNav({ className }: { className?: string }) {
